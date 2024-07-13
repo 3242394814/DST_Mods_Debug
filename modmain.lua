@@ -99,6 +99,10 @@ if IsmodDownLoad(346962876) then -- DST Freezer
     addlist_debug("DST Freezer","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=346962876")
 end
 
+if IsmodDownLoad(363112314) then -- Map Revealer for DST
+    addlist_debug("Map Revealer for DST","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=363112314")
+end
+
 if IsmodDownLoad(780009141) then -- Finder
     addlist_debug("Finder","这是一个过时的MOD 无法正常使用\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=780009141")
 end
@@ -133,6 +137,23 @@ end
 
 if IsmodDownLoad(347079953) then -- Display Food Values
     addlist_debug("Display Food Values","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅，并使用Show Me(中文)或Insight替代它","https://steamcommunity.com/sharedfiles/filedetails/?id=347079953")
+end
+
+if IsmodDownLoad(668708075) then -- [T] Map Plugins(DST)
+    addlist_debug("Map Plugins(DST)","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=668708075","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
+end
+if IsmodDownLoad(1157975551) then -- Extended Map Icons
+    addlist_debug("Extended Map Icons","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=1157975551","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
+end
+if IsmodDownLoad(449537190) then -- Wall Map Icons
+    addlist_debug("Wall Map Icons","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=449537190","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
+end
+
+if IsmodDownLoad(347360448) then -- DST Where's My Beefalo?
+    addlist_debug("DST Where's My Beefalo?","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=347360448","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
+end
+if IsmodDownLoad(2565578363) then -- Where's My Beefalo?
+    addlist_debug("Where's My Beefalo?","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=2565578363","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
 end
 
 if IsmodDownLoad(362175979) then -- Wormhole Marks [DST]
