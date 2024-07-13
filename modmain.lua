@@ -18,7 +18,7 @@ local function switch_NewMod(NewMod)
             {
                 text = "带我订阅此MOD的替代品",
                 cb = function()
-                    VisitURL(NewMod)
+                    _G.VisitURL(NewMod)
                 end
             }
     end
