@@ -230,6 +230,10 @@ if IsmodDownLoad(2763963752) then -- T键物品增加
     addlist_debug("T键物品增加","这是Too Many Items Plus模组的补充包\n建议您前往创意工坊取消订阅此模组还有T键Plus并换成最新版T键","https://steamcommunity.com/sharedfiles/filedetails/?id=2763963752","https://steamcommunity.com/sharedfiles/filedetails/?id=2896126381")
 end
 
+if IsmodDownLoad(1651623054) then -- 简易血条DST (旧)
+    addlist_debug("简易血条DST (旧)","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=1651623054","https://steamcommunity.com/sharedfiles/filedetails/?id=1207269058")
+end
+
 if IsmodDownLoad(2634976992) and IsmodDownLoad(1467214795) then -- 暖石无限耐久与岛屿冒险同时订阅
     addlist_debug("暖石无限耐久","你同时订阅了暖石无限耐久与岛屿冒险，这两个模组是不兼容的\n建议您前往创意工坊取消订阅并换成兼容的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2634976992","https://steamcommunity.com/sharedfiles/filedetails/?id=466732225")
 end
@@ -264,7 +268,7 @@ if IsmodDownLoad(2995399263) then -- 😶‍🌫️骑牛状态显示 Beefalo St
 end
 
 
-AddClassPostConstruct("screens/redux/mainscreen", function(self) -- 如果在主页面
+AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- 如果在主页面
     self.inst:DoTaskInTime(2, function() -- 等2秒 急了会崩溃0.0
         -- 处理结果并依次展示
         if #debug_list > 0 then
@@ -303,7 +307,7 @@ AddClassPostConstruct("screens/redux/mainscreen", function(self) -- 如果在主
             TheFrontEnd:PushScreen(
                 PopupDialogScreen(
                     "MOD检测报告器",
-                    "恭喜，你的MOD都是最新的！你现在可以关闭此模组了\n等此模组有更新时，再尝试开启检测",
+                    "恭喜，看起来你的MOD都是最新的！你现在可以关闭此模组了\n等此模组有更新时，再尝试开启检测\n(如果还有其它有问题的模组但未被检测出来，欢迎前往创意工坊反馈)",
                     {
                         {
                             text = "关闭此模组",
