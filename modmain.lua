@@ -191,7 +191,7 @@ if IsmodDownLoad(831523966) then -- 999堆叠
 end
 
 if IsmodDownLoad(2078243581) then -- Display Attack Range
-    addlist_debug("Display Attack Range","这是一个过时的MOD 含有一些BUG\n建议您前往创意工坊取消订阅并换成FIX版","https://steamcommunity.com/sharedfiles/filedetails/?id=2078243581","https://steamcommunity.com/sharedfiles/filedetails/?id=3033933065")
+    addlist_debug("Display Attack Range","这是一个过时的MOD 含有一些BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=2078243581")
 end
 
 if IsmodDownLoad(836583293) then -- Item Info 这是原版
@@ -256,11 +256,23 @@ if IsmodDownLoad(1898292532) then -- [Tips]提示猎狗和BOSS的攻击时间
     addlist_debug("[Tips]提示猎狗和BOSS的攻击时间","这是一个有问题的MOD！该MOD会每秒遍历全局Ents表占用服务器大量性能！\n建议您前往创意工坊取消订阅！！！","https://steamcommunity.com/sharedfiles/filedetails/?id=1898292532")
 end
 
+if IsmodDownLoad(2119128165) then -- 自动寻路 | Never Get Lost
+    addlist_debug("自动寻路 | Never Get Lost","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2119128165","https://steamcommunity.com/sharedfiles/filedetails/?id=2849308125")
+end
+
+if IsmodDownLoad(2805318787) then -- 无视服务器MOD过期
+    addlist_debug("无视服务器MOD过期","此模组会使客户端无视服务器MOD下载状态并强行加入服务器\n这容易导致严重的BUG发生！强烈建议您取消订阅并查看正确的解决方法","https://steamcommunity.com/sharedfiles/filedetails/?id=2805318787","https://www.bilibili.com/opus/954763232708395009")
+end
+
+if IsmodDownLoad(3025319554) then -- 无视服务器MOD过期 by.萌萌的新
+    addlist_debug("无视服务器MOD过期","此模组会使客户端无视服务器MOD下载状态并强行加入服务器\n这容易导致严重的BUG发生！强烈建议您取消订阅并查看正确的解决方法","https://steamcommunity.com/sharedfiles/filedetails/?id=3025319554","https://www.bilibili.com/opus/954763232708395009")
+end
+
 if IsmodDownLoad(2321974509) then -- Automatic chest sorting
-    addlist_debug("Automatic chest sorting","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2321974509","https://steamcommunity.com/sharedfiles/filedetails/?id=3223103565")
+    addlist_debug("Automatic chest sorting","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2321974509","https://steamcommunity.com/sharedfiles/filedetails/?id=3223103565")
 end
 if IsmodDownLoad(2996027471) then -- 😶‍🌫️自动整理物品 Automatic chest sorting
-    addlist_debug("自动整理物品 Automatic chest sorting","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2996027471","https://steamcommunity.com/sharedfiles/filedetails/?id=3223103565")
+    addlist_debug("自动整理物品 Automatic chest sorting","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2996027471","https://steamcommunity.com/sharedfiles/filedetails/?id=3223103565")
 end
 
 if IsmodDownLoad(2995399263) then -- 😶‍🌫️骑牛状态显示 Beefalo Status Bar
@@ -284,12 +296,13 @@ AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- �
             local PopupDialogScreen = require("screens/redux/popupdialog")
             TheFrontEnd:PushScreen(
                 PopupDialogScreen(
-                    "恭喜，你的MOD都是最新的！",
-                    "但你还没有订阅Chinese++Pro\n你可以订阅Chinese++ Pro来获取各大官方MOD的翻译！",
+                    "MOD检测报告器",
+                    "恭喜，看起来你的MOD都是最新的！你现在可以关闭此模组了。但你还没有订阅Chinese++Pro\n你可以订阅Chinese++ Pro来获取各大官方MOD的翻译！",
                     {
                         {
-                            text = "订阅完成！",
+                            text = "关闭此模组",
                             cb = function()
+                                _G.KnownModIndex:Disable(modname) -- 没问题就关闭模组
                                 TheFrontEnd:PopScreen()
                             end,
                         },
