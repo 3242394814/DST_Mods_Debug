@@ -215,6 +215,9 @@ end
 if IsmodDownLoad(2873533916) then -- ActionQueue RB3 (New action compatible)
     addlist_debug("ActionQueue RB3 (New action compatible)","这是英文版的排队论！\n我建议您前往创意工坊取消订阅并换成中文版滴~","https://steamcommunity.com/sharedfiles/filedetails/?id=2873533916","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
 end
+if IsmodDownLoad(3415621265) then -- 动作队列·重启·叁模组汉化丨ActionQueue RB3 CN
+    addlist_debug("动作队列·重启·叁","此中文翻译版本较差（机翻？），建议你切换为另一个翻译版本","https://steamcommunity.com/sharedfiles/filedetails/?id=3415621265","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
+end
 
 if IsmodDownLoad(374550642) then -- Increased Stack size
     addlist_debug("Increased Stack size","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=374550642","https://steamcommunity.com/sharedfiles/filedetails/?id=2774093373")
@@ -238,6 +241,10 @@ if IsmodDownLoad(1901927445) then -- Item Info
 end
 if IsmodDownLoad(2049203096) then -- item info 物品信息 - Shang 汉化版
     addlist_debug("item info 物品信息 - Shang 汉化版","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=2049203096","https://steamcommunity.com/sharedfiles/filedetails/?id=3118627881")
+end
+
+if IsmodDownLoad(3415567277) then -- 小地图HUD模组汉化丨Minimap HUD CN
+    addlist_debug("小地图HUD","这不是官方原版的小地图，建议您前往创意工坊切换为官方版本\nTips:官方版本与其它Mod的兼容性更好\n并搭配Chinese++ Pro来获取最完整的中文汉化","https://steamcommunity.com/sharedfiles/filedetails/?id=3415567277","https://steamcommunity.com/sharedfiles/filedetails/?id=345692228")
 end
 
 if IsmodDownLoad(2438350724) then -- 组合状态[最新/中文]-Combined Status
@@ -321,6 +328,14 @@ end
 
 if IsmodDownLoad(873350047) then -- 快速丢弃-客户端版本
     addlist_debug("快速丢弃-客户端版本","此Mod的功能已经被官方收录到原版游戏中了！\n你不需要开启此Mod即可享受它的功能！","https://steamcommunity.com/sharedfiles/filedetails/?id=873350047")
+end
+
+if IsmodDownLoad(1207269058) then -- 简易血条DST
+    addlist_debug("简易血条DST","此Mod在蛇年更新后会导致洞穴崩溃\n请停止使用。","https://steamcommunity.com/sharedfiles/filedetails/?id=1207269058")
+end
+
+if IsmodDownLoad(2427481232) then -- 错误追踪
+    addlist_debug("错误追踪（炸了）","此Mod已停止维护，现在它只会让你的游戏崩溃","https://steamcommunity.com/sharedfiles/filedetails/?id=2427481232")
 end
 
 AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- 如果在主页面
