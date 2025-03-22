@@ -1,27 +1,6 @@
--- local function zh_en(zh, en)  -- Other languages don't work
---     local chinese_languages =
---     {
---         zh = "zh", -- Chinese for Steam
---         zhr = "zh", -- Chinese for WeGame
---         ch = "zh", -- Chinese mod
---         chs = "zh", -- Chinese mod
---         sc = "zh", -- simple Chinese
---         zht = "zh", -- traditional Chinese for Steam
---         tc = "zh", -- traditional Chinese
---         cht = "zh", -- Chinese mod
---     }
-
---     if chinese_languages[locale] ~= nil then
---         lang = chinese_languages[locale]
---     else
---         lang = en
---     end
-
---     return lang ~= "zh" and en or zh
--- end
-
+---@diagnostic disable: lowercase-global
 name = "MOD检测报告器"
-version = "2025.2.27"
+version = "2025.3.22"
 description =
 "检测你的MOD列表，告诉你哪些MOD是过时的/有BUG的，并为你推荐它的替代品。"
 author = "冰冰羊"

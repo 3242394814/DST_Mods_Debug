@@ -1,6 +1,6 @@
 local _G = GLOBAL
 local debug_list = {}
-num = 1
+local num = 1
 
 -- 判断是否下载了对应模组
 local function IsmodDownLoad(name)
@@ -86,257 +86,279 @@ local function show_debug(title,desc,URL,NewMod)
 end
 
 -- 添加需要处理的模组
-local function addlist_debug(title,desc,URL,NewMod) -- 标题，内容，旧模组创意工坊链接，新的模组替代品
-    table.insert(debug_list,{title,desc,URL,NewMod})
+local function addlist_debug(modid, title, desc, NewMod) -- 标题，内容，旧模组创意工坊链接，新的模组替代品
+    if IsmodDownLoad(modid) then
+        table.insert(debug_list, {title, desc, "https://steamcommunity.com/sharedfiles/filedetails/?id="..modid, type(NewMod) == "number" and "https://steamcommunity.com/sharedfiles/filedetails/?id=" .. NewMod or NewMod})
+    end
 end
 
 -- 检测部分（添加到 debug_list）
-if IsmodDownLoad(382177939) then -- DST Storm Cellar
-    addlist_debug("DST Storm Cellar","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=382177939")
+
+-- DST Storm Cellar
+addlist_debug(382177939,"DST Storm Cellar","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅")
+
+-- DST Freezer
+addlist_debug(346962876,"DST Freezer","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅")
+
+-- Map Revealer for DST
+addlist_debug(363112314,"Map Revealer for DST","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅")
+
+-- Finder
+addlist_debug(780009141,"Finder","这是一个过时的MOD 无法正常使用\n建议您前往创意工坊取消订阅")
+
+-- Health Info
+addlist_debug(375859599,"Health Info","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅")
+
+-- Global Pause
+addlist_debug(758532836,"Global Pause","这是一个过时的MOD\n建议您前往创意工坊取消订阅")
+
+-- Global Player Icons
+addlist_debug(632082897,"Global Player Icons","这是一个过时的MOD，功能已经失效了\n建议您前往创意工坊取消订阅")
+
+-- Extra Equip Slots
+addlist_debug(375850593,"Extra Equip Slots","这是一个过时的MOD 且含有诸多BUG\n强烈建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+
+-- Extra Equip Slots (Updated)
+addlist_debug(1818688368,"Extra Equip Slots (Updated)","这是一个过时的MOD 且含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+
+-- DST 四格装备栏
+addlist_debug(1819567085,"DST 四格装备栏","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+
+-- 五格装备栏（幽冥汉化版）
+addlist_debug(2373346252,"五格装备栏（幽冥汉化版）","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+
+--额外物品装备栏&UI优化
+addlist_debug(1405120786,"额外物品装备栏&UI优化","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+
+-- 45 Inventory Slots 这是原版
+addlist_debug(786556008,"45 Inventory Slots","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)")
+
+-- 45 Inventory Slots
+addlist_debug(2965758547,"45 Inventory Slots","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)")
+
+-- 45 Inventory Slots and the fixed fishing rod slots.
+addlist_debug(2568821043,"45 Inventory Slots and the fixed fishing rod slots.","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)")
+
+-- 45 Inventory Slots [EquipSlot UI expand]
+addlist_debug(2906717350,"45 Inventory Slots [EquipSlot UI expand]","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)")
+
+
+-- [Discontinued] VK Extra Equipment and Inventory
+addlist_debug(943020433,"[Discontinued] VK Extra Equipment and Inventory","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅")
+
+
+-- [OUTDATED] Complete Your Map
+addlist_debug(459280938,"[OUTDATED] Complete Your Map","这是一个过时的MOD，打开它会让你的游戏立刻闪退。请取消订阅")
+
+
+-- Complete Your Map[FIX]
+addlist_debug(2003064672,"Complete Your Map[FIX]","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅")
+
+
+-- Display Food Values
+addlist_debug(347079953,"Display Food Values","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅，并使用Show Me(中文)或Insight替代它")
+
+
+-- [T] Map Plugins(DST)
+addlist_debug(668708075,"Map Plugins(DST)","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅",2923713671)
+
+-- Extended Map Icons
+addlist_debug(1157975551,"Extended Map Icons","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅",2923713671)
+
+-- Wall Map Icons
+addlist_debug(449537190,"Wall Map Icons","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅",2923713671)
+
+
+-- DST Where's My Beefalo?
+addlist_debug(347360448,"DST Where's My Beefalo?","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅",2923713671)
+
+-- Where's My Beefalo?
+addlist_debug(2565578363,"Where's My Beefalo?","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅",2923713671)
+
+
+-- Wormhole icons
+addlist_debug(821143467,"Wormhole icons","这是一个过时的MOD 且含有BUG 建议您前往创意工坊取消订阅并换成下方推荐的模组\n并搭配Chinese++ Pro来获取中文翻译",2831613121)
+
+
+-- Wormhole Icons [Fixed]
+addlist_debug(1295277999,"Wormhole Icons [Fixed]","这是一个过时的MOD 且含有BUG 建议您前往创意工坊取消订阅并换成下方推荐的模组\n并搭配Chinese++ Pro来获取中文翻译",2831613121)
+
+
+-- Wormhole Marks [DST]
+addlist_debug(362175979,"Wormhole Marks [DST]","这是一个过时的MOD 且含有BUG 建议您前往创意工坊取消订阅并换成下方推荐的模组\n并搭配Chinese++ Pro来修正中文翻译",2621090176)
+
+
+-- Smarter Crock Pot
+addlist_debug(365119238,"Smarter Crock Pot","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",727774324)
+
+-- craft pot
+if not IsmodDownLoad(727774324) then
+    -- craft pot(服务器版)
+    addlist_debug(3448934423,"craft pot","你订阅了非官方版的craft pot 容易发生兼容性问题\n建议您前往创意工坊取消订阅并换成官方版本",727774324)
+    addlist_debug(3445445695,"craft pot","你订阅了非官方版的craft pot 容易发生兼容性问题\n并搭配Chinese++ Pro来获取中文翻译",727774324)
 end
 
-if IsmodDownLoad(346962876) then -- DST Freezer
-    addlist_debug("DST Freezer","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=346962876")
+-- Egg Pain Together(蛋疼排队论)
+addlist_debug(949822556,"Egg Pain Together(蛋疼排队论)","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",3018652965)
+
+-- Action Queue(DST)
+addlist_debug(609051112,"Action Queue(DST)","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",3018652965)
+
+-- ActionQueue Reborn
+addlist_debug(1608191708,"ActionQueue Reborn","这是一个较老的MOD，功能较少\n我建议您前往创意工坊取消订阅并换成最新版",3018652965)
+
+-- 黑化列队行为学
+addlist_debug(2898654623,"黑化列队行为学","这是一个较老的MOD，功能较少\n我建议您前往创意工坊取消订阅并换成最新版",3018652965)
+
+-- ActionQueue RB2 (RWYS supported)
+addlist_debug(2325441848,"ActionQueue RB2 (RWYS supported)","这是一个较老的MOD，功能较少还是英文！\n我建议您前往创意工坊取消订阅并换成最新的中文版行为学",3018652965)
+
+-- ActionQueue RB3 (New action compatible)
+addlist_debug(2873533916,"ActionQueue RB3 (New action compatible)","这是英文版的排队论！\n我建议您前往创意工坊取消订阅并换成中文版滴~",3018652965)
+
+-- 动作队列·重启·叁模组汉化丨ActionQueue RB3 CN
+addlist_debug(3415621265,"动作队列·重启·叁","此中文翻译版本较差（机翻？），建议你切换为另一个翻译版本",3018652965)
+
+
+-- Increased Stack size
+addlist_debug(374550642,"Increased Stack size","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2774093373)
+
+-- 改变堆叠大小 MAX9999
+addlist_debug(1571581787,"改变堆叠大小 MAX9999","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2774093373)
+
+-- 999堆叠
+addlist_debug(831523966,"999堆叠","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2774093373)
+
+
+-- Display Attack Range
+addlist_debug(2078243581,"Display Attack Range","这是一个有BUG的MOD 碰到某些生物会导致服务器崩溃\n建议您前往创意工坊取消订阅",2078243581)
+
+
+-- Item Info 这是原版
+addlist_debug(836583293,"Item Info","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+
+-- Item Info
+addlist_debug(1901927445,"Item Info","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+
+-- item info 物品信息 - Shang 汉化版
+addlist_debug(2049203096,"item info 物品信息 - Shang 汉化版","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+
+-- Item Info Improved
+addlist_debug(2972499450,"Item Info Improved","这是一个过时的MOD 有概率导致游戏崩溃\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+
+-- 小地图HUD模组汉化丨Minimap HUD CN
+addlist_debug(3415567277,"小地图HUD","这不是官方原版的小地图Mod，建议您前往创意工坊切换为官方版本\n并搭配Chinese++ Pro来获取最完整的中文汉化\nTips:官方版本与其它Mod的兼容性更好",345692228)
+
+
+-- 组合状态[最新/中文]-Combined Status
+addlist_debug(2438350724,"组合状态[最新/中文]-Combined Status","这不是官方原版的组合状态，兼容性较差。墙裂建议您前往创意工坊切换为官方版本\n并搭配Chinese++ Pro来获取最完整的中文汉化\nTips:官方版本与其它Mod的兼容性更好",376333686)
+
+-- Combined Status (modified) server version
+addlist_debug(1896968971,"Combined Status (modified) server version","你订阅了非官方版的综合状态显示！且是老旧版本！\n请您务必前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化",376333686)
+
+-- Combined Status online(季节时钟转联机)
+addlist_debug(3092317730,"Combined Status online(季节时钟转联机)","你订阅了非官方版的综合状态显示！且是老旧版本！\n请您务必前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化",376333686)
+
+-- 综合状态 服务端 Combined Status Server
+addlist_debug(2995319954,"综合状态 服务端 Combined Status Server","你订阅了非官方版的综合状态显示！且是老旧版本！\n请您务必前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化",376333686)
+
+-- Combined Status (Server-Sided)
+addlist_debug(2885354999,"Combined Status (Server-Sided)","你订阅了非官方版的综合状态显示！且是老旧版本！\n请您务必前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化",376333686)
+
+-- Force Download: Combined Status
+addlist_debug(816057392,"Force Download: Combined Status","你订阅了非官方版的综合状态显示！且是老旧版本！\n请您务必前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化",376333686)
+
+-- Combined Status(盗版)
+addlist_debug(632083515,"Combined Status","你订阅了非官方版的综合状态显示！且是老旧版本！\n请您务必前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化",376333686)
+
+
+-- [DST]Too Many Items
+addlist_debug(551338671,"[DST]Too Many Items","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2896126381)
+
+-- Too Many Items Fix (really old, don't use)
+addlist_debug(881455419,"Too Many Items Fix (really old, don't use)","这是一个过时的MOD 含有诸多BUG 连作者都叫你别用！\n请您前往创意工坊取消订阅并换成最新版",2896126381)
+
+-- [TMIP]Too Many Items Plus
+addlist_debug(1365141672,"[TMIP]Too Many Items Plus","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",2896126381)
+
+-- T键物品增加
+addlist_debug(2763963752,"T键物品增加","这是Too Many Items Plus模组的补充包\n建议您前往创意工坊取消订阅此模组还有T键Plus并换成最新版T键",2896126381)
+
+
+-- 简易血条DST (旧)
+addlist_debug(1651623054,"简易血条DST (旧)","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",1207269058)
+
+
+if IsmodDownLoad(1467214795) then
+    -- 暖石无限耐久与岛屿冒险同时订阅
+    addlist_debug(2634976992,"暖石无限耐久","你同时订阅了暖石无限耐久与岛屿冒险，这两个模组是不兼容的\n建议您前往创意工坊取消订阅并换成兼容的版本",466732225)
+
+    -- 小房子和岛屿冒险同时订阅
+    addlist_debug(1951468597,"小房子","你同时订阅了小房子与岛屿冒险，这两个模组是不兼容的\n注意不要同时开启！！！！！！")
+
+    -- 独行长路和岛屿冒险同时订阅
+    addlist_debug(2657513551,"独行长路","你同时订阅了独行长路与岛屿冒险，这两个模组是不兼容的\n注意不要同时开启！！！！！！")
 end
 
-if IsmodDownLoad(363112314) then -- Map Revealer for DST
-    addlist_debug("Map Revealer for DST","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=363112314")
+-- MaxView(大视野)
+addlist_debug(804413673,"MaxView(大视野)","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成OB视角模组",1579421388)
+
+
+-- Status Announcements 这是原版，太老了
+addlist_debug(343753877,"Status Announcements","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成更新的版本",2785634357)
+
+-- 快捷宣告新·中文（原作授权） 我的评价是不够新！
+addlist_debug(2773348050,"快捷宣告新·中文（原作授权）","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成更新的版本",2785634357)
+
+
+-- Show Nicknames 显示昵称（客户端）
+addlist_debug(956206484,"Show Nicknames 显示昵称（客户端）","这是一个有BUG的MOD\n当玩家因诅咒变为猴子时，游戏会崩溃。\n建议你订阅新版本",2917322514)
+
+
+-- [Tips]提示猎狗和BOSS的攻击时间
+addlist_debug(1898292532,"[Tips]提示猎狗和BOSS的攻击时间","这是一个有问题的MOD！该MOD会每秒遍历全局Ents表占用服务器大量性能！\n建议您前往创意工坊取消订阅！！！",1898292532)
+
+
+-- 自动寻路 | Never Get Lost
+addlist_debug(2119128165,"自动寻路 | Never Get Lost","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本",2849308125)
+
+
+-- 无视服务器MOD过期
+addlist_debug(2805318787,"无视服务器MOD过期","此模组会使客户端无视服务器MOD下载状态并强行加入服务器\n这容易导致严重的BUG发生！强烈建议您取消订阅并查看正确的解决方法","https://www.bilibili.com/opus/954763232708395009")
+
+
+-- 无视服务器MOD过期 by.萌萌的新
+addlist_debug(3025319554,"无视服务器MOD过期","此模组会使客户端无视服务器MOD下载状态并强行加入服务器\n这容易导致严重的BUG发生！强烈建议您取消订阅并查看正确的解决方法","https://www.bilibili.com/opus/954763232708395009")
+
+
+-- Automatic chest sorting
+addlist_debug(2321974509,"Automatic chest sorting","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本",3223103565)
+
+-- 😶‍🌫️自动整理物品 Automatic chest sorting
+addlist_debug(2996027471,"自动整理物品 Automatic chest sorting","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本",3223103565)
+
+
+-- 😶‍🌫️骑牛状态显示 Beefalo Status Bar
+addlist_debug(2995399263,"骑牛状态显示 Beefalo Status Bar","这不是官方版的Beefalo Status Bar 兼容性较差（不兼容驯养考拉象MOD）！建议您前往创意工坊切换为官方版本\n并搭配Chinese++ Pro来获取完整的中文汉化",2477889104)
+
+
+-- 快速丢弃-客户端版本
+addlist_debug(873350047,"快速丢弃-客户端版本","此Mod的功能已经被官方收录到原版游戏中了！\n你不需要开启此Mod即可享受它的功能！",873350047)
+
+
+-- 简易血条DST
+addlist_debug(1207269058,"简易血条DST","此Mod在蛇年更新后会有概率导致洞穴崩溃\n请停止使用。",1207269058)
+
+
+-- 错误追踪
+addlist_debug(2427481232,"错误追踪（炸了）","此Mod已停止维护，现在它只会让你的游戏崩溃",2427481232)
+
+if not IsmodDownLoad(2796122895) then
+    -- Show Oceanfish（服务器版）
+    addlist_debug(3449296058,"Show Oceanfish","这不是官方版的显示鱼群+自动海钓 Mod\n建议您前往创意工坊切换为官方版本",2796122895)
 end
 
-if IsmodDownLoad(780009141) then -- Finder
-    addlist_debug("Finder","这是一个过时的MOD 无法正常使用\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=780009141")
-end
 
-if IsmodDownLoad(375859599) then -- Health Info
-    addlist_debug("Health Info","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=375859599")
-end
-
-if IsmodDownLoad(758532836) then -- Global Pause
-    addlist_debug("Global Pause","这是一个过时的MOD\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=758532836")
-end
-
-if IsmodDownLoad(632082897) then -- Global Player Icons
-    addlist_debug("Global Player Icons","这是一个过时的MOD，功能已经失效了\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=632082897")
-end
-
-if IsmodDownLoad(375850593) then -- Extra Equip Slots
-    addlist_debug("Extra Equip Slots","这是一个过时的MOD 且含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..","https://steamcommunity.com/sharedfiles/filedetails/?id=375850593")
-end
-if IsmodDownLoad(1818688368) then -- Extra Equip Slots (Updated)
-    addlist_debug("Extra Equip Slots (Updated)","这是一个过时的MOD 且含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..","https://steamcommunity.com/sharedfiles/filedetails/?id=1818688368")
-end
-if IsmodDownLoad(1819567085) then -- DST 四格装备栏
-    addlist_debug("DST 四格装备栏","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..","https://steamcommunity.com/sharedfiles/filedetails/?id=1819567085")
-end
-if IsmodDownLoad(2373346252) then -- 五格装备栏（幽冥汉化版）
-    addlist_debug("五格装备栏（幽冥汉化版）","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..","https://steamcommunity.com/sharedfiles/filedetails/?id=2373346252")
-end
-if IsmodDownLoad(1405120786) then --额外物品装备栏&UI优化
-    addlist_debug("额外物品装备栏&UI优化","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..","https://steamcommunity.com/sharedfiles/filedetails/?id=1405120786")
-end
-
-if IsmodDownLoad(786556008) then -- 45 Inventory Slots 这是原版
-    addlist_debug("45 Inventory Slots","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)","https://steamcommunity.com/sharedfiles/filedetails/?id=786556008")
-end
-if IsmodDownLoad(2965758547) then -- 45 Inventory Slots
-    addlist_debug("45 Inventory Slots","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)","https://steamcommunity.com/sharedfiles/filedetails/?id=2965758547")
-end
-if IsmodDownLoad(2568821043) then -- 45 Inventory Slots and the fixed fishing rod slots.
-    addlist_debug("45 Inventory Slots and the fixed fishing rod slots.","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)","https://steamcommunity.com/sharedfiles/filedetails/?id=2568821043")
-end
-if IsmodDownLoad(2906717350) then -- 45 Inventory Slots [EquipSlot UI expand]
-    addlist_debug("45 Inventory Slots [EquipSlot UI expand]","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)","https://steamcommunity.com/sharedfiles/filedetails/?id=2906717350")
-end
-
-if IsmodDownLoad(943020433) then -- [Discontinued] VK Extra Equipment and Inventory
-    addlist_debug("[Discontinued] VK Extra Equipment and Inventory","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=943020433")
-end
-
-if IsmodDownLoad(459280938) then -- [OUTDATED] Complete Your Map
-    addlist_debug("[OUTDATED] Complete Your Map","这是一个过时的MOD，打开它会让你的游戏立刻闪退。请取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=459280938")
-end
-
-if IsmodDownLoad(2003064672) then -- Complete Your Map[FIX]
-    addlist_debug("Complete Your Map[FIX]","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=2003064672")
-end
-
-if IsmodDownLoad(347079953) then -- Display Food Values
-    addlist_debug("Display Food Values","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅，并使用Show Me(中文)或Insight替代它","https://steamcommunity.com/sharedfiles/filedetails/?id=347079953")
-end
-
-if IsmodDownLoad(668708075) then -- [T] Map Plugins(DST)
-    addlist_debug("Map Plugins(DST)","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=668708075","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
-end
-if IsmodDownLoad(1157975551) then -- Extended Map Icons
-    addlist_debug("Extended Map Icons","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=1157975551","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
-end
-if IsmodDownLoad(449537190) then -- Wall Map Icons
-    addlist_debug("Wall Map Icons","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=449537190","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
-end
-
-if IsmodDownLoad(347360448) then -- DST Where's My Beefalo?
-    addlist_debug("DST Where's My Beefalo?","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=347360448","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
-end
-if IsmodDownLoad(2565578363) then -- Where's My Beefalo?
-    addlist_debug("Where's My Beefalo?","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=2565578363","https://steamcommunity.com/sharedfiles/filedetails/?id=2923713671")
-end
-
-if IsmodDownLoad(821143467) then -- Wormhole icons
-    addlist_debug("Wormhole icons","这是一个过时的MOD 且含有BUG 建议您前往创意工坊取消订阅并换成下方推荐的模组\n并搭配Chinese++ Pro来获取中文翻译","https://steamcommunity.com/sharedfiles/filedetails/?id=821143467","https://steamcommunity.com/sharedfiles/filedetails/?id=2831613121")
-end
-
-if IsmodDownLoad(1295277999) then -- Wormhole Icons [Fixed]
-    addlist_debug("Wormhole Icons [Fixed]","这是一个过时的MOD 且含有BUG 建议您前往创意工坊取消订阅并换成下方推荐的模组\n并搭配Chinese++ Pro来获取中文翻译","https://steamcommunity.com/sharedfiles/filedetails/?id=1295277999","https://steamcommunity.com/sharedfiles/filedetails/?id=2831613121")
-end
-
-if IsmodDownLoad(362175979) then -- Wormhole Marks [DST]
-    addlist_debug("Wormhole Marks [DST]","这是一个过时的MOD 且含有BUG 建议您前往创意工坊取消订阅并换成下方推荐的模组\n并搭配Chinese++ Pro来修正中文翻译","https://steamcommunity.com/sharedfiles/filedetails/?id=362175979","https://steamcommunity.com/sharedfiles/filedetails/?id=2621090176")
-end
-
-if IsmodDownLoad(365119238) then -- Smarter Crock Pot
-    addlist_debug("Smarter Crock Pot","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=365119238","https://steamcommunity.com/sharedfiles/filedetails/?id=727774324")
-end
-
-if IsmodDownLoad(949822556) then -- Egg Pain Together(蛋疼排队论)
-    addlist_debug("Egg Pain Together(蛋疼排队论)","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=949822556","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
-end
-if IsmodDownLoad(609051112) then -- Action Queue(DST)
-    addlist_debug("Action Queue(DST)","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=609051112","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
-end
-if IsmodDownLoad(1608191708) then -- ActionQueue Reborn
-    addlist_debug("ActionQueue Reborn","这是一个较老的MOD，功能较少\n我建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=1608191708","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
-end
-if IsmodDownLoad(2898654623) then -- 黑化列队行为学
-    addlist_debug("黑化列队行为学","这是一个较老的MOD，功能较少\n我建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=2898654623","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
-end
-if IsmodDownLoad(2325441848) then -- ActionQueue RB2 (RWYS supported)
-    addlist_debug("ActionQueue RB2 (RWYS supported)","这是一个较老的MOD，功能较少还是英文！\n我建议您前往创意工坊取消订阅并换成最新的中文版行为学","https://steamcommunity.com/sharedfiles/filedetails/?id=2325441848","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
-end
-if IsmodDownLoad(2873533916) then -- ActionQueue RB3 (New action compatible)
-    addlist_debug("ActionQueue RB3 (New action compatible)","这是英文版的排队论！\n我建议您前往创意工坊取消订阅并换成中文版滴~","https://steamcommunity.com/sharedfiles/filedetails/?id=2873533916","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
-end
-if IsmodDownLoad(3415621265) then -- 动作队列·重启·叁模组汉化丨ActionQueue RB3 CN
-    addlist_debug("动作队列·重启·叁","此中文翻译版本较差（机翻？），建议你切换为另一个翻译版本","https://steamcommunity.com/sharedfiles/filedetails/?id=3415621265","https://steamcommunity.com/sharedfiles/filedetails/?id=3018652965")
-end
-
-if IsmodDownLoad(374550642) then -- Increased Stack size
-    addlist_debug("Increased Stack size","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=374550642","https://steamcommunity.com/sharedfiles/filedetails/?id=2774093373")
-end
-if IsmodDownLoad(1571581787) then -- 改变堆叠大小 MAX9999
-    addlist_debug("改变堆叠大小 MAX9999","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=1571581787","https://steamcommunity.com/sharedfiles/filedetails/?id=2774093373")
-end
-if IsmodDownLoad(831523966) then -- 999堆叠
-    addlist_debug("999堆叠","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=831523966","https://steamcommunity.com/sharedfiles/filedetails/?id=2774093373")
-end
-
-if IsmodDownLoad(2078243581) then -- Display Attack Range
-    addlist_debug("Display Attack Range","这是一个过时的MOD 含有一些BUG\n建议您前往创意工坊取消订阅","https://steamcommunity.com/sharedfiles/filedetails/?id=2078243581")
-end
-
-if IsmodDownLoad(836583293) then -- Item Info 这是原版
-    addlist_debug("Item Info","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=836583293","https://steamcommunity.com/sharedfiles/filedetails/?id=3118627881")
-end
-if IsmodDownLoad(1901927445) then -- Item Info
-    addlist_debug("Item Info","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=1901927445","https://steamcommunity.com/sharedfiles/filedetails/?id=3118627881")
-end
-if IsmodDownLoad(2049203096) then -- item info 物品信息 - Shang 汉化版
-    addlist_debug("item info 物品信息 - Shang 汉化版","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=2049203096","https://steamcommunity.com/sharedfiles/filedetails/?id=3118627881")
-end
-
-if IsmodDownLoad(3415567277) then -- 小地图HUD模组汉化丨Minimap HUD CN
-    addlist_debug("小地图HUD","这不是官方原版的小地图，建议您前往创意工坊切换为官方版本\nTips:官方版本与其它Mod的兼容性更好\n并搭配Chinese++ Pro来获取最完整的中文汉化","https://steamcommunity.com/sharedfiles/filedetails/?id=3415567277","https://steamcommunity.com/sharedfiles/filedetails/?id=345692228")
-end
-
-if IsmodDownLoad(2438350724) then -- 组合状态[最新/中文]-Combined Status
-    addlist_debug("组合状态[最新/中文]-Combined Status","这不是官方原版的组合状态，建议您前往创意工坊切换为官方版本\nTips:官方版本与其它Mod的兼容性更好\n并搭配Chinese++ Pro来获取最完整的中文汉化","https://steamcommunity.com/sharedfiles/filedetails/?id=2438350724","https://steamcommunity.com/sharedfiles/filedetails/?id=376333686")
-end
-if IsmodDownLoad(1896968971) and not IsmodDownLoad(376333686) then -- Combined Status (modified) server version 订阅了服务器版综合状态却没有订阅原版
-    addlist_debug("Combined Status (modified) server version","你订阅了非官方版的综合状态显示，建议您前往创意工坊切换为官方版本\n并搭配Chinese++ Pro来获取最完整的中文汉化","https://steamcommunity.com/sharedfiles/filedetails/?id=1896968971","https://steamcommunity.com/sharedfiles/filedetails/?id=376333686")
-end
-if IsmodDownLoad(3092317730) and not IsmodDownLoad(376333686) then -- Combined Status online(季节时钟转联机) 订阅了服务器版综合状态却没有订阅原版
-    addlist_debug("Combined Status online(季节时钟转联机)","你订阅了非官方版的综合状态显示，建议您前往创意工坊切换为官方版本\n并搭配Chinese++ Pro来获取最完整的中文汉化","https://steamcommunity.com/sharedfiles/filedetails/?id=3092317730","https://steamcommunity.com/sharedfiles/filedetails/?id=376333686")
-end
-if IsmodDownLoad(816057392) then -- Force Download: Combined Status
-    addlist_debug("Force Download: Combined Status","你订阅了非官方版的综合状态显示！请您前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化","https://steamcommunity.com/sharedfiles/filedetails/?id=816057392","https://steamcommunity.com/sharedfiles/filedetails/?id=376333686")
-end
-
-if IsmodDownLoad(551338671) then -- [DST]Too Many Items
-    addlist_debug("[DST]Too Many Items","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=551338671","https://steamcommunity.com/sharedfiles/filedetails/?id=2896126381")
-end
-if IsmodDownLoad(881455419) then -- Too Many Items Fix (really old, don't use)
-    addlist_debug("Too Many Items Fix (really old, don't use)","这是一个过时的MOD 含有诸多BUG 连作者都叫你别用！\n请您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=881455419","https://steamcommunity.com/sharedfiles/filedetails/?id=2896126381")
-end
-if IsmodDownLoad(1365141672) then -- [TMIP]Too Many Items Plus
-    addlist_debug("[TMIP]Too Many Items Plus","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=1365141672","https://steamcommunity.com/sharedfiles/filedetails/?id=2896126381")
-end
-if IsmodDownLoad(2763963752) then -- T键物品增加
-    addlist_debug("T键物品增加","这是Too Many Items Plus模组的补充包\n建议您前往创意工坊取消订阅此模组还有T键Plus并换成最新版T键","https://steamcommunity.com/sharedfiles/filedetails/?id=2763963752","https://steamcommunity.com/sharedfiles/filedetails/?id=2896126381")
-end
-
-if IsmodDownLoad(1651623054) then -- 简易血条DST (旧)
-    addlist_debug("简易血条DST (旧)","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版","https://steamcommunity.com/sharedfiles/filedetails/?id=1651623054","https://steamcommunity.com/sharedfiles/filedetails/?id=1207269058")
-end
-
-if IsmodDownLoad(2634976992) and IsmodDownLoad(1467214795) then -- 暖石无限耐久与岛屿冒险同时订阅
-    addlist_debug("暖石无限耐久","你同时订阅了暖石无限耐久与岛屿冒险，这两个模组是不兼容的\n建议您前往创意工坊取消订阅并换成兼容的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2634976992","https://steamcommunity.com/sharedfiles/filedetails/?id=466732225")
-end
-if IsmodDownLoad(1951468597) and IsmodDownLoad(1467214795) then -- 小房子和岛屿冒险同时订阅
-    addlist_debug("小房子","你同时订阅了小房子与岛屿冒险，这两个模组是不兼容的\n注意不要同时开启！！！！！！","https://steamcommunity.com/sharedfiles/filedetails/?id=1951468597")
-end
-
-if IsmodDownLoad(804413673) then -- MaxView(大视野)
-    addlist_debug("MaxView(大视野)","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成OB视角模组","https://steamcommunity.com/sharedfiles/filedetails/?id=804413673","https://steamcommunity.com/sharedfiles/filedetails/?id=1579421388")
-end
-
-if IsmodDownLoad(343753877) then -- Status Announcements 这是原版，太老了
-    addlist_debug("Status Announcements","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=343753877","https://steamcommunity.com/sharedfiles/filedetails/?id=2785634357")
-end
-if IsmodDownLoad(2773348050) then -- 快捷宣告新·中文（原作授权） 评价是不够新！
-    addlist_debug("快捷宣告新·中文（原作授权）","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2773348050","https://steamcommunity.com/sharedfiles/filedetails/?id=2785634357")
-end
-
-if IsmodDownLoad(956206484) then -- Show Nicknames 显示昵称（客户端）
-    addlist_debug("Show Nicknames 显示昵称（客户端）","这是一个有BUG的MOD\n当玩家因诅咒变为猴子时，游戏会崩溃。\n建议你订阅新版本","https://steamcommunity.com/sharedfiles/filedetails/?id=956206484","https://steamcommunity.com/sharedfiles/filedetails/?id=2917322514")
-end
-
-if IsmodDownLoad(1898292532) then -- [Tips]提示猎狗和BOSS的攻击时间
-    addlist_debug("[Tips]提示猎狗和BOSS的攻击时间","这是一个有问题的MOD！该MOD会每秒遍历全局Ents表占用服务器大量性能！\n建议您前往创意工坊取消订阅！！！","https://steamcommunity.com/sharedfiles/filedetails/?id=1898292532")
-end
-
-if IsmodDownLoad(2119128165) then -- 自动寻路 | Never Get Lost
-    addlist_debug("自动寻路 | Never Get Lost","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2119128165","https://steamcommunity.com/sharedfiles/filedetails/?id=2849308125")
-end
-
-if IsmodDownLoad(2805318787) then -- 无视服务器MOD过期
-    addlist_debug("无视服务器MOD过期","此模组会使客户端无视服务器MOD下载状态并强行加入服务器\n这容易导致严重的BUG发生！强烈建议您取消订阅并查看正确的解决方法","https://steamcommunity.com/sharedfiles/filedetails/?id=2805318787","https://www.bilibili.com/opus/954763232708395009")
-end
-
-if IsmodDownLoad(3025319554) then -- 无视服务器MOD过期 by.萌萌的新
-    addlist_debug("无视服务器MOD过期","此模组会使客户端无视服务器MOD下载状态并强行加入服务器\n这容易导致严重的BUG发生！强烈建议您取消订阅并查看正确的解决方法","https://steamcommunity.com/sharedfiles/filedetails/?id=3025319554","https://www.bilibili.com/opus/954763232708395009")
-end
-
-if IsmodDownLoad(2321974509) then -- Automatic chest sorting
-    addlist_debug("Automatic chest sorting","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2321974509","https://steamcommunity.com/sharedfiles/filedetails/?id=3223103565")
-end
-if IsmodDownLoad(2996027471) then -- 😶‍🌫️自动整理物品 Automatic chest sorting
-    addlist_debug("自动整理物品 Automatic chest sorting","这是一个有BUG的MOD\n建议您前往创意工坊取消订阅并换成更新的版本","https://steamcommunity.com/sharedfiles/filedetails/?id=2996027471","https://steamcommunity.com/sharedfiles/filedetails/?id=3223103565")
-end
-
-if IsmodDownLoad(2995399263) then -- 😶‍🌫️骑牛状态显示 Beefalo Status Bar
-    addlist_debug("骑牛状态显示 Beefalo Status Bar","这不是官方版的Beefalo Status Bar 兼容性较差（不兼容驯养考拉象MOD）！建议您前往创意工坊切换为官方版本\n并搭配Chinese++ Pro来获取完整的中文汉化","https://steamcommunity.com/sharedfiles/filedetails/?id=2995399263","https://steamcommunity.com/sharedfiles/filedetails/?id=2477889104")
-end
-
-if IsmodDownLoad(873350047) then -- 快速丢弃-客户端版本
-    addlist_debug("快速丢弃-客户端版本","此Mod的功能已经被官方收录到原版游戏中了！\n你不需要开启此Mod即可享受它的功能！","https://steamcommunity.com/sharedfiles/filedetails/?id=873350047")
-end
-
-if IsmodDownLoad(1207269058) then -- 简易血条DST
-    addlist_debug("简易血条DST","此Mod在蛇年更新后会导致洞穴崩溃\n请停止使用。","https://steamcommunity.com/sharedfiles/filedetails/?id=1207269058")
-end
-
-if IsmodDownLoad(2427481232) then -- 错误追踪
-    addlist_debug("错误追踪（炸了）","此Mod已停止维护，现在它只会让你的游戏崩溃","https://steamcommunity.com/sharedfiles/filedetails/?id=2427481232")
-end
 
 AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- 如果在主页面
     self.inst:DoTaskInTime(2, function() -- 等2秒 急了会崩溃0.0
@@ -355,7 +377,7 @@ AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- �
             TheFrontEnd:PushScreen(
                 PopupDialogScreen(
                     "MOD检测报告器",
-                    "恭喜，看起来你的MOD都是最新的！你现在可以关闭此模组了。但你还没有订阅Chinese++Pro\n你可以订阅Chinese++ Pro来获取各大官方MOD的翻译！",
+                    "恭喜！我没有检测到你订阅了有问题的MOD！\n你现在可以关闭此模组了。但你还没有订阅Chinese++Pro\n你可以订阅Chinese++ Pro来获取各大官方MOD的翻译！",
                     {
                         {
                             text = "关闭此模组",
@@ -378,7 +400,7 @@ AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- �
             TheFrontEnd:PushScreen(
                 PopupDialogScreen(
                     "MOD检测报告器",
-                    "恭喜，看起来你的MOD都是最新的！你现在可以关闭此模组了\n等此模组有更新时，再尝试开启检测\n(如果还有其它有问题的模组但未被检测出来，欢迎前往创意工坊反馈)",
+                    "恭喜！我没有检测到你订阅了有问题的MOD！\n你现在可以关闭此模组了\n等此模组有更新时，再尝试开启检测\n(如果还有其它有问题的模组但未被检测出来，欢迎前往创意工坊反馈)",
                     {
                         {
                             text = "关闭此模组",
