@@ -34,15 +34,10 @@ local function show_Chinese_pro()
                     "订阅Chinese++ Pro来获取各大官方MOD的翻译！",
                     {
                         {
-                            text = "订阅完成！",
+                            text = "帮我订阅！（是的你无法拒绝）",
                             cb = function()
+                                _G.TheSim:SubscribeToMod("workshop-2941527805")
                                 TheFrontEnd:PopScreen()
-                            end,
-                        },
-                        {
-                            text = "带我去订阅！",
-                            cb = function()
-                                _G.VisitURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2941527805")
                             end,
                         },
                     }
@@ -382,14 +377,15 @@ AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- �
                         {
                             text = "关闭此模组",
                             cb = function()
-                                _G.KnownModIndex:Disable(modname) -- 没问题就关闭模组
+                                _G.KnownModIndex:Disable(modname)
                                 TheFrontEnd:PopScreen()
                             end,
                         },
                         {
-                            text = "带我去订阅！",
+                            text = "帮我订阅！",
                             cb = function()
-                                _G.VisitURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2941527805")
+                                _G.TheSim:SubscribeToMod("workshop-2941527805")
+                                TheFrontEnd:PopScreen()
                             end,
                         },
                     }
