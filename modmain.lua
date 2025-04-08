@@ -370,7 +370,14 @@ if not IsmodDownLoad(2796122895) then
     addlist_debug(3449296058,"Show Oceanfish","这不是官方版的显示鱼群+自动海钓 Mod\n建议您前往创意工坊切换为官方版本",2796122895)
 end
 
+-- Snapping tills server
+addlist_debug(3256273776,"Snapping tills server","这不是官方版的Snapping tills\n建议您取消订阅",2302837868)
 
+-- Auto Walking Server
+addlist_debug(3261041569,"Auto Walking Server","这不是官方版自动寻路PLUS\n建议您取消订阅",2849308125)
+
+-- Status Announcements (NoMu) server
+addlist_debug(3169298715,"Status Announcements (NoMu) server","这不是官方版快捷宣告(NoMu)\n建议您取消订阅",2784715091)
 
 AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- 如果在主页面
     self.inst:DoTaskInTime(2, function() -- 等2秒 急了会崩溃0.0
