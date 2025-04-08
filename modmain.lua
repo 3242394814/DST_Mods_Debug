@@ -266,6 +266,29 @@ addlist_debug(816057392,"Force Download: Combined Status","你订阅了非官方
 -- Combined Status(盗版)
 addlist_debug(632083515,"Combined Status","你订阅了非官方版的综合状态显示！且是老旧版本！\n请您务必前往创意工坊订阅官方版本！\n并搭配Chinese++ Pro来获取最完整的中文汉化",376333686)
 
+-- 几何建筑汉化版—服务器端
+addlist_debug(3134766537,"几何建筑汉化版—服务器端","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
+
+-- 几何布局 服务端版
+addlist_debug(2901979304,"几何布局 服务端版","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
+
+-- Geometric Placement(盗版)
+addlist_debug(591987989,"Geometric Placement","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
+
+-- Geometric Placement(盗版)
+addlist_debug(1922842343,"Geometric Placement","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
+
+-- Geometric Placement(盗版)
+addlist_debug(3269046346,"Geometric Placement","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
+
+-- 建筑几何学中文汉化Geometric Placement
+addlist_debug(3343140219,"建筑几何学中文汉化","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
+
+-- 😶‍🌫️几何布局 服务端
+addlist_debug(2995757113,"几何布局 服务端","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
+
+-- 几何布局 - 汉化版
+addlist_debug(3034588489,"几何布局 - 汉化版","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
 
 -- [DST]Too Many Items
 addlist_debug(551338671,"[DST]Too Many Items","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2896126381)
