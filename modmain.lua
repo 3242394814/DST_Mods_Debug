@@ -111,19 +111,19 @@ addlist_debug(758532836,"Global Pause","这是一个过时的MOD\n建议您前�
 addlist_debug(632082897,"Global Player Icons","这是一个过时的MOD，功能已经失效了\n建议您前往创意工坊取消订阅")
 
 -- Extra Equip Slots
-addlist_debug(375850593,"Extra Equip Slots","这是一个过时的MOD 且含有诸多BUG\n强烈建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+addlist_debug(375850593,"Extra Equip Slots","这是一个过时的MOD 且含有诸多BUG\n强烈建议您备份存档后尝试换个版本",3040893393)
 
 -- Extra Equip Slots (Updated)
-addlist_debug(1818688368,"Extra Equip Slots (Updated)","这是一个过时的MOD 且含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+addlist_debug(1818688368,"Extra Equip Slots (Updated)","这是一个过时的MOD 且含有诸多BUG\n建议您备份存档后尝试换个版本",3040893393)
 
 -- DST 四格装备栏
-addlist_debug(1819567085,"DST 四格装备栏","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+addlist_debug(1819567085,"DST 四格装备栏","这是一个过时的MOD 含有诸多BUG\n建议您备份存档后尝试换个版本",3040893393)
 
 -- 五格装备栏（幽冥汉化版）
-addlist_debug(2373346252,"五格装备栏（幽冥汉化版）","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+addlist_debug(2373346252,"五格装备栏（幽冥汉化版）","这是一个过时的MOD 含有诸多BUG\n建议您备份存档后尝试换个版本",3040893393)
 
 --额外物品装备栏&UI优化
-addlist_debug(1405120786,"额外物品装备栏&UI优化","这是一个过时的MOD 含有诸多BUG\n建议您前往游戏脱掉装备后去创意工坊取消订阅\nTips:目前我找到的所有更多装备栏Mod都有不同程度的BUG，所以最好别订阅..")
+addlist_debug(1405120786,"额外物品装备栏&UI优化","这是一个过时的MOD 含有诸多BUG\n建议您备份存档后尝试换个版本",3040893393)
 
 -- 45 Inventory Slots 这是原版
 addlist_debug(786556008,"45 Inventory Slots","这是一个过时的MOD 含有诸多BUG！\n建议您前往创意工坊取消订阅并换成xuopleu制作的整合版？\n(我推荐不订阅45格，BUG总是有的，还不如给自己指令刷一个坎普斯背包)")
@@ -226,7 +226,7 @@ addlist_debug(831523966,"999堆叠","这是一个过时的MOD 含有诸多BUG\n�
 
 
 -- Display Attack Range
-addlist_debug(2078243581,"Display Attack Range","这是一个有BUG的MOD 碰到某些生物会导致服务器崩溃\n建议您前往创意工坊取消订阅",2078243581)
+addlist_debug(2078243581,"Display Attack Range","这是一个有BUG的MOD 碰到某些生物会导致服务器崩溃\n建议您前往创意工坊取消订阅")
 
 
 -- Item Info 这是原版
@@ -326,13 +326,15 @@ addlist_debug(343753877,"Status Announcements","这是一个过时的MOD\n建议
 -- 快捷宣告新·中文（原作授权） 我的评价是不够新！
 addlist_debug(2773348050,"快捷宣告新·中文（原作授权）","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成更新的版本",2785634357)
 
+-- 显示昵称 [服务端]
+addlist_debug(3395794288,"显示昵称 [服务端]","开启这个模组后当玩家因诅咒变为猴子时，游戏会崩溃。\n建议你订阅新版本",2917322514)
 
 -- Show Nicknames 显示昵称（客户端）
-addlist_debug(956206484,"Show Nicknames 显示昵称（客户端）","这是一个有BUG的MOD\n当玩家因诅咒变为猴子时，游戏会崩溃。\n建议你订阅新版本",2917322514)
+addlist_debug(956206484,"Show Nicknames 显示昵称（客户端）","开启这个模组后当玩家因诅咒变为猴子时，游戏会崩溃。\n建议你订阅新版本",2917322514)
 
 
 -- [Tips]提示猎狗和BOSS的攻击时间
-addlist_debug(1898292532,"[Tips]提示猎狗和BOSS的攻击时间","这是一个有问题的MOD！该MOD会每秒遍历全局Ents表占用服务器大量性能！\n建议您前往创意工坊取消订阅！！！",1898292532)
+addlist_debug(1898292532,"[Tips]提示猎狗和BOSS的攻击时间","这是一个有问题的MOD！该MOD会每秒遍历全局Ents表占用服务器大量性能！\n建议您前往创意工坊取消订阅！！！",3511498282)
 
 
 -- 自动寻路 | Never Get Lost
@@ -366,7 +368,7 @@ addlist_debug(1207269058,"简易血条DST","此Mod在蛇年更新后会有概率
 
 
 -- 错误追踪
-addlist_debug(2427481232,"错误追踪（炸了）","此Mod已停止维护，现在它只会让你的游戏崩溃",2427481232)
+addlist_debug(2427481232,"错误追踪（炸了）","此Mod已停止维护，现在它没有任何作用。",3377689002)
 
 if not IsmodDownLoad(2796122895) then
     -- Show Oceanfish（服务器版）
