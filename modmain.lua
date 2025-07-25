@@ -364,8 +364,9 @@ addlist_debug(2995399263,"骑牛状态显示 Beefalo Status Bar","这不是官�
 addlist_debug(873350047,"快速丢弃-客户端版本","此Mod的功能已经被官方收录到原版游戏中了！\n你不需要开启此Mod即可享受它的功能！")
 
 -- 简易血条DST
-addlist_debug(1207269058,"简易血条DST","此Mod在蛇年更新后会有概率导致洞穴崩溃\n请再订阅一个【近期BUG修复】来解决此问题\n(请点击带我订阅此MOD的替代品按钮)",3452907445)
-
+if not IsmodDownLoad(3452907445) then
+    addlist_debug(1207269058,"简易血条DST","此Mod在蛇年更新后会有概率导致洞穴崩溃\n请再订阅一个【近期BUG修复】来解决此问题\n(请点击带我订阅此MOD的替代品按钮)",3452907445)
+end
 
 -- 错误追踪
 addlist_debug(2427481232,"错误追踪（炸了）","此Mod已停止维护，现在它没有任何作用。",3377689002)
@@ -410,6 +411,7 @@ AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- �
                             text = "关闭此模组",
                             cb = function()
                                 _G.KnownModIndex:Disable(modname)
+                                _G.KnownModIndex:Save()
                                 TheFrontEnd:PopScreen()
                             end,
                         },
