@@ -1,90 +1,121 @@
-local _G = GLOBAL
+GLOBAL.setmetatable(env, {
+    __index = function(t, k)
+        return GLOBAL.rawget(GLOBAL, k)
+    end
+})
+
 local debug_list = {}
 local num = 1
 
+local custom_list = {}
+local custom_num = 1
+
 -- 判断是否下载了对应模组
+
+---@param name integer
 local function IsmodDownLoad(name)
-    if _G.KnownModIndex:GetModInfo("workshop-"..name) then
-        return true
-    else
-        return false
-    end
+    return KnownModIndex:GetModInfo("workshop-"..name)
 end
 
 -- 判断是否有新的模组替代它
+---@param NewMod string|nil
+---@return table|nil
 local function switch_NewMod(NewMod)
     if NewMod then
         return
             {
                 text = "带我订阅此MOD的替代品",
                 cb = function()
-                    _G.VisitURL(NewMod)
+                    VisitURL(NewMod)
                 end
             }
     end
 end
 
--- 带我去订阅Chinese++ Pro
-local function show_Chinese_pro()
-    if not IsmodDownLoad(2941527805) then
-        local PopupDialogScreen = require("screens/redux/popupdialog")
-            TheFrontEnd:PushScreen(
-                PopupDialogScreen(
-                    "最后一步",
-                    "订阅Chinese++ Pro来获取各大官方MOD的翻译！",
-                    {
-                        {
-                            text = "帮我订阅！（是的你无法拒绝）",
-                            cb = function()
-                                _G.TheSim:SubscribeToMod("workshop-2941527805")
-                                TheFrontEnd:PopScreen()
-                            end,
-                        },
-                    }
-                )
-            )
-    end
+---@param title string
+---@param desc string
+---@param text1 string
+---@param cb1 function
+---@param text2 string|nil
+---@param cb2 function|nil
+---@param text3 string|nil
+---@param cb3 function|nil
+local function show_custom_debug(title,desc,text1,cb1,text2,cb2,text3,cb3)
+    local PopupDialogScreen = require("screens/redux/popupdialog")
+    TheFrontEnd:PushScreen(
+        PopupDialogScreen(
+            title,
+            desc,
+            {
+                {
+                    text = text1,
+                    cb = cb1,
+                },
+                text2 and
+                {
+                    text = text2,
+                    cb = cb2,
+                } or nil,
+                text3 and
+                {
+                    text = text3,
+                    cb = cb3,
+                } or nil,
+            }
+        )
+    )
 end
 
-
 -- 显示结果
+---@param title string
+---@param desc string
+---@param URL string
+---@param NewMod string|nil
 local function show_debug(title,desc,URL,NewMod)
 	local PopupDialogScreen = require("screens/redux/popupdialog")
-		TheFrontEnd:PushScreen(
-			PopupDialogScreen(
-				title,
-				desc,
-				{
-					{
-						text = "下一个！",
-						cb = function()
-                            num = num + 1
-							TheFrontEnd:PopScreen()
+    TheFrontEnd:PushScreen(
+        PopupDialogScreen(
+            title,
+            desc,
+            {
+                {
+                    text = "下一个！",
+                    cb = function()
+                        num = num + 1
+                        TheFrontEnd:PopScreen()
 
-                            if num <= #debug_list then
-                                show_debug(debug_list[num][1],debug_list[num][2],debug_list[num][3],debug_list[num][4])
-                            else
-                                show_Chinese_pro()
-                            end
-						end,
-					},
-					{
-						text = "带我去取消订阅",
-						cb = function()
-							_G.VisitURL(URL)
-						end,
-					},
-                    switch_NewMod(NewMod),
-				}
-			)
-		)
+                        if num <= #debug_list then
+                            show_debug(debug_list[num][1],debug_list[num][2],debug_list[num][3],debug_list[num][4])
+                        elseif #custom_list > 0 then
+                            local title = custom_list[custom_num][1]
+                            local desc = custom_list[custom_num][2]
+                            local text1 = custom_list[custom_num][3]
+                            local cb1 = custom_list[custom_num][4]
+                            local text2 = custom_list[custom_num][5]
+                            local cb2 = custom_list[custom_num][6]
+                            local text3 = custom_list[custom_num][7]
+                            local cb3 = custom_list[custom_num][8]
+                            show_custom_debug(title,desc,text1,cb1,text2,cb2,text3,cb3)
+                        end
+                    end,
+                },
+                {
+                    text = "带我去取消订阅",
+                    cb = function()
+                        VisitURL(URL)
+                    end,
+                },
+                switch_NewMod(NewMod),
+            }
+        )
+    )
 end
 
 -- 添加需要处理的模组
---- @param modid number
+--- @param modid integer
 --- @param title string
 --- @param desc string
---- @param NewMod number|string|nil
+--- @param NewMod integer|string|nil
 local function addlist_debug(modid, title, desc, NewMod) -- 标题，内容，旧模组创意工坊链接，新的模组替代品
     if IsmodDownLoad(modid) then
         table.insert(debug_list, {title, desc, "https://steamcommunity.com/sharedfiles/filedetails/?id="..modid, type(NewMod) == "number" and "https://steamcommunity.com/sharedfiles/filedetails/?id=" .. NewMod or NewMod})
@@ -392,11 +423,68 @@ addlist_debug(3169298715,"Status Announcements (NoMu) server","这不是官方�
 -- Deluxe Cooking Pot
 addlist_debug(907007729,"Deluxe Cooking Pot","这个模组已经停止更新维护，现在开启这个模组将使你的服务器崩溃",3064846414)
 
+-- Keeth客户端
+addlist_debug(2111490085,"Keeth客户端","这个模组已经停止更新维护，现在开启这个模组容易使你的游戏崩溃")
+
+---@param check_fn function
+---@param title string
+---@param desc string
+---@param text1 string
+---@param cb1 function
+---@param text2 string|nil
+---@param cb2 function|nil
+---@param text3 string|nil
+---@param cb3 function|nil
+local function addlist_custom_debug(check_fn, title, desc, text1, cb1, text2, cb2, text3, cb3) -- 标题，内容，旧模组创意工坊链接，新的模组替代品
+    if check_fn() then
+        table.insert(custom_list, {title, desc, text1, cb1, text2, cb2, text3, cb3})
+    end
+end
+
+local function next_custom_debug()
+    return
+    function()
+        TheFrontEnd:PopScreen()
+        custom_num = custom_num + 1
+        if custom_num <= #custom_list then
+            show_custom_debug(custom_list[custom_num][1],custom_list[custom_num][2],custom_list[custom_num][3],custom_list[custom_num][4])
+        end
+    end
+end
+
+addlist_custom_debug(
+    function()
+        return not IsmodDownLoad(3377689002)
+    end,
+    "你没有订阅【自动崩溃恢复 & 错误追踪分析】模组","这个模组能实时分析检测导致游戏崩溃的模组！建议订阅\n(这叫什么？这叫打组合拳󰀃)",
+    "去创意工坊订阅",
+    function()
+        VisitURL("https://steamcommunity.com/sharedfiles/filedetails/?id=3377689002")
+    end,
+    "还是算了",
+    next_custom_debug()
+)
+
+addlist_custom_debug(
+    function()
+        return not IsmodDownLoad(2941527805)
+    end,
+    #debug_list > 0 and "最后一步" or "MOD检测报告器",
+    #debug_list > 0 and "订阅Chinese++ Pro来获取各大官方MOD的翻译！" or "恭喜！我暂时没有检测到你订阅了有问题的MOD！\n你现在可以关闭此模组了。但你还没有订阅Chinese++Pro\n你可以订阅Chinese++ Pro来获取各大官方MOD的翻译！",
+    "帮我订阅并关闭【Mod检测报告器】",
+    function()
+        TheSim:SubscribeToMod("workshop-2941527805")
+        KnownModIndex:Disable(modname)
+        KnownModIndex:Save()
+        TheFrontEnd:PopScreen()
+    end
+)
+
+
 AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- 如果在主页面
     self.inst:DoTaskInTime(2, function() -- 等2秒 急了会崩溃0.0
         -- 处理结果并依次展示
         if #debug_list > 0 then
-
             -- 处理信息
             local title = debug_list[num][1]
             local desc = debug_list[num][2]
@@ -404,31 +492,16 @@ AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- �
             local NewMod = debug_list[num][4]
 
             show_debug(title,desc,URL,NewMod)
-        elseif not IsmodDownLoad(2941527805) then -- 没有订阅Chinese++ Pro
-            local PopupDialogScreen = require("screens/redux/popupdialog")
-            TheFrontEnd:PushScreen(
-                PopupDialogScreen(
-                    "MOD检测报告器",
-                    "恭喜！我没有检测到你订阅了有问题的MOD！\n你现在可以关闭此模组了。但你还没有订阅Chinese++Pro\n你可以订阅Chinese++ Pro来获取各大官方MOD的翻译！",
-                    {
-                        {
-                            text = "关闭此模组",
-                            cb = function()
-                                _G.KnownModIndex:Disable(modname)
-                                _G.KnownModIndex:Save()
-                                TheFrontEnd:PopScreen()
-                            end,
-                        },
-                        {
-                            text = "帮我订阅！",
-                            cb = function()
-                                _G.TheSim:SubscribeToMod("workshop-2941527805")
-                                TheFrontEnd:PopScreen()
-                            end,
-                        },
-                    }
-                )
-            )
+        elseif #custom_list > 0 then
+            local title = custom_list[custom_num][1]
+            local desc = custom_list[custom_num][2]
+            local text1 = custom_list[custom_num][3]
+            local cb1 = custom_list[custom_num][4]
+            local text2 = custom_list[custom_num][5]
+            local cb2 = custom_list[custom_num][6]
+            local text3 = custom_list[custom_num][7]
+            local cb3 = custom_list[custom_num][8]
+            show_custom_debug(title,desc,text1,cb1,text2,cb2,text3,cb3)
         else
             local PopupDialogScreen = require("screens/redux/popupdialog")
             TheFrontEnd:PushScreen(
@@ -439,7 +512,8 @@ AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- �
                         {
                             text = "关闭此模组",
                             cb = function()
-                                _G.KnownModIndex:Disable(modname) -- 没问题就关闭模组
+                                KnownModIndex:Disable(modname) -- 没问题就关闭模组
+                                KnownModIndex:Save()
                                 TheFrontEnd:PopScreen()
                             end,
                         },
