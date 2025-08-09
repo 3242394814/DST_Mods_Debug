@@ -81,6 +81,10 @@ local function show_debug(title,desc,URL,NewMod)
 end
 
 -- 添加需要处理的模组
+--- @param modid number
+--- @param title string
+--- @param desc string
+--- @param NewMod number|string|nil
 local function addlist_debug(modid, title, desc, NewMod) -- 标题，内容，旧模组创意工坊链接，新的模组替代品
     if IsmodDownLoad(modid) then
         table.insert(debug_list, {title, desc, "https://steamcommunity.com/sharedfiles/filedetails/?id="..modid, type(NewMod) == "number" and "https://steamcommunity.com/sharedfiles/filedetails/?id=" .. NewMod or NewMod})
@@ -215,14 +219,11 @@ addlist_debug(2873533916,"ActionQueue RB3 (New action compatible)","这是英文
 addlist_debug(3415621265,"动作队列·重启·叁","此中文翻译版本较差（机翻？），建议你切换为另一个翻译版本",3018652965)
 
 
--- Increased Stack size
-addlist_debug(374550642,"Increased Stack size","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2774093373)
-
 -- 改变堆叠大小 MAX9999
-addlist_debug(1571581787,"改变堆叠大小 MAX9999","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2774093373)
+addlist_debug(1571581787,"改变堆叠大小 MAX9999","这个模组已经停止更新维护，现在开启这个模组将使你的服务器崩溃",2774093373)
 
 -- 999堆叠
-addlist_debug(831523966,"999堆叠","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2774093373)
+addlist_debug(831523966,"999堆叠","这个模组已经停止更新维护，现在开启这个模组将使你的服务器崩溃",2774093373)
 
 
 -- Display Attack Range
@@ -230,16 +231,16 @@ addlist_debug(2078243581,"Display Attack Range","这是一个有BUG的MOD 碰到
 
 
 -- Item Info 这是原版
-addlist_debug(836583293,"Item Info","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+addlist_debug(836583293,"Item Info","这是一个过时的MOD 在特定情况会导致游戏崩溃\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
 
 -- Item Info
-addlist_debug(1901927445,"Item Info","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+addlist_debug(1901927445,"Item Info","这是一个过时的MOD 在特定情况会导致游戏崩溃\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
 
 -- item info 物品信息 - Shang 汉化版
-addlist_debug(2049203096,"item info 物品信息 - Shang 汉化版","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+addlist_debug(2049203096,"item info 物品信息 - Shang 汉化版","这是一个过时的MOD 在特定情况会导致游戏崩溃\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
 
 -- Item Info Improved
-addlist_debug(2972499450,"Item Info Improved","这是一个过时的MOD 有概率导致游戏崩溃\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
+addlist_debug(2972499450,"Item Info Improved","这是一个过时的MOD 在特定情况会导致游戏崩溃\n建议您前往创意工坊取消订阅并换成最新版",3118627881)
 
 -- 小地图HUD模组汉化丨Minimap HUD CN
 addlist_debug(3415567277,"小地图HUD","这不是官方原版的小地图Mod，建议您前往创意工坊切换为官方版本\n并搭配Chinese++ Pro来获取最完整的中文汉化\nTips:官方版本与其它Mod的兼容性更好",345692228)
@@ -294,10 +295,10 @@ addlist_debug(3034588489,"几何布局 - 汉化版","你订阅了非官方版的
 addlist_debug(3467304228,"几何布局服务器版","你订阅了非官方版的几何布局！可能会导致兼容性问题发生\n建议取消订阅，切换为官方版\n并搭配Chinese++ Pro来获取最完整的中文汉化",351325790)
 
 -- [DST]Too Many Items
-addlist_debug(551338671,"[DST]Too Many Items","这是一个过时的MOD 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2896126381)
+addlist_debug(551338671,"[DST]Too Many Items","这是一个过时的MOD 含有诸多问题\n建议您前往创意工坊取消订阅并换成最新版",2896126381)
 
 -- Too Many Items Fix (really old, don't use)
-addlist_debug(881455419,"Too Many Items Fix (really old, don't use)","这是一个过时的MOD 含有诸多BUG 连作者都叫你别用！\n请您前往创意工坊取消订阅并换成最新版",2896126381)
+addlist_debug(881455419,"Too Many Items Fix (really old, don't use)","这是一个过时的MOD 含有诸多问题 连作者都叫你别用！\n请您前往创意工坊取消订阅并换成最新版",2896126381)
 
 -- [TMIP]Too Many Items Plus
 addlist_debug(1365141672,"[TMIP]Too Many Items Plus","这是一个过时的MOD\n建议您前往创意工坊取消订阅并换成最新版",2896126381)
@@ -387,6 +388,9 @@ addlist_debug(3261041569,"Auto Walking Server","这不是官方版自动寻路PL
 
 -- Status Announcements (NoMu) server
 addlist_debug(3169298715,"Status Announcements (NoMu) server","这不是官方版快捷宣告(NoMu)\n建议您取消订阅",2784715091)
+
+-- Deluxe Cooking Pot
+addlist_debug(907007729,"Deluxe Cooking Pot","这个模组已经停止更新维护，现在开启这个模组将使你的服务器崩溃",3064846414)
 
 AddClassPostConstruct("screens/redux/multiplayermainscreen", function(self) -- 如果在主页面
     self.inst:DoTaskInTime(2, function() -- 等2秒 急了会崩溃0.0
