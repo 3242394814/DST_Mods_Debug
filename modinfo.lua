@@ -1,10 +1,10 @@
 ---@diagnostic disable: lowercase-global
 name = "MOD检测报告器"
-version = "2025.09.29"
+version = "2025.10.08"
 description = [[
 检测你的MOD列表，告诉你哪些MOD是过时的/有BUG的，并为你推荐它的替代品。
 最近更新：
-取消推荐订阅【近期BUG修复】因为官方已修复此问题
+现在将推荐你订阅原版行为学RB3，因为它支持中文且版本更新
 ]]
 author = "冰冰羊"
 

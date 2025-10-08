@@ -231,25 +231,25 @@ if not IsmodDownLoad(727774324) then
 end
 
 -- Egg Pain Together(蛋疼排队论)
-addlist_debug(949822556,"Egg Pain Together(蛋疼排队论)","这是一个过时的Mod 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",3018652965)
+addlist_debug(949822556,"Egg Pain Together(蛋疼排队论)","这是一个过时的Mod 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2873533916)
 
 -- Action Queue(DST)
-addlist_debug(609051112,"Action Queue(DST)","这是一个过时的Mod 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",3018652965)
+addlist_debug(609051112,"Action Queue(DST)","这是一个过时的Mod 含有诸多BUG\n建议您前往创意工坊取消订阅并换成最新版",2873533916)
 
 -- ActionQueue Reborn
-addlist_debug(1608191708,"ActionQueue Reborn","这是一个较老的Mod，功能较少\n我建议您前往创意工坊取消订阅并换成最新版",3018652965)
+addlist_debug(1608191708,"ActionQueue Reborn","这是一个较老的Mod，功能较少\n我建议您前往创意工坊取消订阅并换成最新版",2873533916)
 
 -- 黑化列队行为学
-addlist_debug(2898654623,"黑化列队行为学","这是一个较老的Mod，功能较少\n我建议您前往创意工坊取消订阅并换成最新版",3018652965)
+addlist_debug(2898654623,"黑化列队行为学","这是一个较老的Mod，功能较少\n我建议您前往创意工坊取消订阅并换成最新版",2873533916)
 
 -- ActionQueue RB2 (RWYS supported)
-addlist_debug(2325441848,"ActionQueue RB2 (RWYS supported)","这是一个较老的Mod，功能较少还是英文！\n我建议您前往创意工坊取消订阅并换成最新的中文版行为学",3018652965)
+addlist_debug(2325441848,"ActionQueue RB2 (RWYS supported)","这是一个较老的Mod，功能较少还是英文！\n我建议您前往创意工坊取消订阅并换成最新的行为学Mod",2873533916)
 
--- ActionQueue RB3 (New action compatible)
-addlist_debug(2873533916,"ActionQueue RB3 (New action compatible)","这是英文版的排队论！\n我建议您前往创意工坊取消订阅并换成中文版滴~",3018652965)
+-- ActionQueue RB3 汉化版
+addlist_debug(3018652965,"ActionQueue RB3 汉化版","原行为学RB3已支持中文语言\n我建议你换成原版行为学RB3 它的版本更新",2873533916)
 
 -- 动作队列·重启·叁模组汉化丨ActionQueue RB3 CN
-addlist_debug(3415621265,"动作队列·重启·叁","此中文翻译版本较差（机翻？），建议你切换为另一个翻译版本",3018652965)
+addlist_debug(3415621265,"动作队列·重启·叁","原行为学RB3已支持中文语言，且翻译质量更好\n我建议你换成原版行为学RB3 它的版本更新",2873533916)
 
 
 -- 改变堆叠大小 MAX9999
